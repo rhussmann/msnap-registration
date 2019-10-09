@@ -5,6 +5,7 @@ import { Routes } from "../Routes";
 import { FixItBus } from "../components/FixItBus";
 import { createStyles, makeStyles } from "@material-ui/core";
 import { BusSeatChart } from "../components/BusSeatChart";
+import { StateSummary } from "../components/StateSummary";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -26,14 +27,10 @@ export const Home: React.FC = () => {
     <div className={classes.container}>
       <FixItBus />
       <BusSeatChart />
+      <StateSummary />
       <Link to={Routes.VoucherRequestGForm}>
         <Fab variant="extended" className={classes.fab}>
-          GForm
-        </Fab>
-      </Link>
-      <Link to={Routes.VoucherRequestForm}>
-        <Fab variant="extended" className={classes.fab}>
-          Raw form
+          Request a seat
         </Fab>
       </Link>
     </div>

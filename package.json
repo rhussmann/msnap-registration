@@ -19,6 +19,7 @@
     "react-scripts": "3.2.0",
     "react-seat-picker": "^1.4.0",
     "react-tooltip": "^3.11.1",
+    "tabletop": "^1.6.2",
     "typescript": "3.6.3"
   },
   "scripts": {
