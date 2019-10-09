@@ -1,0 +1,25 @@
+name: Build and publish
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build on Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+    - name: npm install and build
+      run: |
+        npm install
+        npm run build
+    - name: Push to Github pages
+      uses: maxheld83/ghpages@v0.1.1
+      env:
+        BUILD_DIR: "build/"
+        GH_PAT: ${{ secrets.GH_PAT }}
