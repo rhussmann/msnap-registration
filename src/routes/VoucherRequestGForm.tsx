@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import { createStyles, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme =>
@@ -7,6 +7,13 @@ const useStyles = makeStyles(theme =>
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
+      height: "100%",
+    },
+    iframe: {
+      width: "100%",
+      height: "100%",
+      paddingTop: "20px",
+      flex: 1,
     },
   })
 );
@@ -16,9 +23,10 @@ export const VoucherRequestGForm: React.FC = () => {
   return (
     <div className={classes.container}>
       <iframe
+        title="Voucher request from"
+        frameBorder={0}
         src="https://docs.google.com/forms/d/e/1FAIpQLSc72YM2okznNBg0c6VYawwO6tHdSkWpaQv_4N4NWNNCbo99Ig/viewform?embedded=true"
-        width="640"
-        height="2066"
+        className={classes.iframe}
       >
         Loading…
       </iframe>
