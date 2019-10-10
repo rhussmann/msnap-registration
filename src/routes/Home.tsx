@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Routes } from "../Routes";
 import { FixItBus } from "../components/FixItBus";
 import { createStyles, makeStyles } from "@material-ui/core";
-import { BusSeatChart } from "../components/BusSeatChart";
 import { StateSummary } from "../components/StateSummary";
 
 const useStyles = makeStyles(theme =>
@@ -26,7 +25,6 @@ export const Home: React.FC = () => {
   return (
     <div className={classes.container}>
       <FixItBus />
-      <BusSeatChart />
       <StateSummary />
       <Link to={Routes.VoucherRequestGForm}>
         <Fab variant="extended" className={classes.fab}>

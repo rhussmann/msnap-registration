@@ -42,61 +42,60 @@ export class BusSeatChart extends React.Component {
   render() {
     const rows = [
       [
-        { id: 1, number: 1, isSelected: true, tooltip: "Reserved by you" },
-        { id: 2, number: 2, tooltip: "Cost: 15$" },
-        null,
-        { id: 3, number: "3", isReserved: true, orientation: "east", tooltip: "Reserved by Rogger" },
-        { id: 4, number: "4", orientation: "west" },
-        null,
-        { id: 5, number: 5 },
-        { id: 6, number: 6 },
+        { id: 1, number: 1, isSelected: false, tooltip: "Available" },
+        { id: 2, number: 2, isSelected: false, tooltip: "Available" },
+        { id: 3, number: 3, isSelected: false, tooltip: "Available" },
       ],
       [
-        { id: 7, number: 1, isReserved: true, tooltip: "Reserved by Matthias Nadler" },
-        { id: 8, number: 2, isReserved: true },
-        null,
-        { id: 9, number: "3", isReserved: true, orientation: "east" },
-        { id: 10, number: "4", orientation: "west" },
-        null,
-        { id: 11, number: 5 },
-        { id: 12, number: 6 },
+        { id: 4, number: 4, isSelected: false, tooltip: "Available" },
+        { id: 5, number: 5, isSelected: false, tooltip: "Available" },
+        { id: 6, number: 6, isSelected: false, tooltip: "Available" },
       ],
       [
-        { id: 13, number: 1 },
-        { id: 14, number: 2 },
-        null,
-        { id: 15, number: 3, isReserved: true, orientation: "east" },
-        { id: 16, number: "4", orientation: "west" },
-        null,
-        { id: 17, number: 5 },
-        { id: 18, number: 6 },
+        { id: 7, number: 7, isSelected: false, tooltip: "Available" },
+        { id: 8, number: 8, isSelected: false, tooltip: "Available" },
+        { id: 9, number: 9, isSelected: false, tooltip: "Available" },
       ],
       [
-        { id: 19, number: 1, tooltip: "Cost: 25$" },
-        { id: 20, number: 2 },
-        null,
-        { id: 21, number: 3, orientation: "east" },
-        { id: 22, number: "4", orientation: "west" },
-        null,
-        { id: 23, number: 5 },
-        { id: 24, number: 6 },
+        { id: 10, number: 10, isSelected: false, tooltip: "Available" },
+        { id: 11, number: 11, isSelected: false, tooltip: "Available" },
+        { id: 12, number: 12, isSelected: false, tooltip: "Available" },
       ],
       [
-        { id: 25, number: 1, isReserved: true },
-        { id: 26, number: 2, orientation: "east" },
-        null,
-        { id: 27, number: "3", isReserved: true },
-        { id: 28, number: "4", orientation: "west" },
-        null,
-        { id: 29, number: 5, tooltip: "Cost: 11$" },
-        { id: 30, number: 6, isReserved: true },
+        { id: 13, number: 13, isSelected: false, tooltip: "Available" },
+        { id: 14, number: 14, isSelected: false, tooltip: "Available" },
+        { id: 15, number: 15, isSelected: false, tooltip: "Available" },
+      ],
+      [
+        { id: 16, number: 16, isSelected: false, tooltip: "Available" },
+        { id: 17, number: 17, isSelected: false, tooltip: "Available" },
+        { id: 18, number: 18, isSelected: false, tooltip: "Available" },
+      ],
+      [
+        { id: 19, number: 19, isSelected: false, tooltip: "Available" },
+        { id: 20, number: 20, isSelected: false, tooltip: "Available" },
+        { id: 21, number: 21, isSelected: false, tooltip: "Available" },
+      ],
+      [
+        { id: 22, number: 22, isSelected: false, tooltip: "Available" },
+        { id: 23, number: 23, isSelected: false, tooltip: "Available" },
+        { id: 24, number: 24, isSelected: false, tooltip: "Available" },
+      ],
+      [
+        { id: 25, number: 25, isSelected: false, tooltip: "Available" },
+        { id: 26, number: 26, isSelected: false, tooltip: "Available" },
+        { id: 27, number: 27, isSelected: false, tooltip: "Available" },
+      ],
+      [
+        { id: 28, number: 28, isSelected: false, tooltip: "Available" },
+        { id: 29, number: 29, isSelected: false, tooltip: "Available" },
+        { id: 30, number: 30, isSelected: false, tooltip: "Available" },
       ],
     ];
     const { loading } = this.state;
     return (
       <div>
-        <h1>Seat Picker</h1>
-        <div style={{ marginTop: "200px" }}>
+        <div style={{ marginTop: "20px", left: "15px" }}>
           <SeatPicker
             addSeatCallback={this.addSeatCallback}
             removeSeatCallback={this.removeSeatCallback}
