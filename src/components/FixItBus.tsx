@@ -76,7 +76,7 @@ const BusSeats: React.FC = () => {
 
   const seats = [];
   for (let i = 0; i < bus.capacity; i++) {
-    seats.push(<BusSeat occupied={i < bus.seatsTaken} />);
+    seats.push(<BusSeat key={`seat${i}`} occupied={i < bus.seatsTaken} />);
   }
   return <div className={classes.seatContainer}>{seats}</div>;
 };
