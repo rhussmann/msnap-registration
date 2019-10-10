@@ -3,20 +3,24 @@ import { makeStyles, createStyles } from "@material-ui/styles";
 import { Theme } from "@material-ui/core";
 import { useStateValue } from "../state/state";
 import { Spinner } from "./Spinner";
+import { url } from "inspector";
 
 const seatsPerRow = 6;
 const isleWidth = 5;
 const seatCommon = {
   margin: 2,
-  width: 20,
-  height: 20,
+  width: 30,
+  height: 30,
 };
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     occupiedSeat: {
       ...seatCommon,
-      backgroundColor: "red",
+      backgroundImage: "url('assets/paw_print.png')",
+      backgroundSize: 30,
+      backgroundRepeat: "no-repeat",
+      backgroundPositionY: -3,
     },
     openSeat: {
       ...seatCommon,
