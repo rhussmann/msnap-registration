@@ -23,16 +23,6 @@ const useStyles = makeStyles(theme =>
 export const Home: React.FC = () => {
   const classes = useStyles();
 
-  var match = useRouteMatch();
-  var url = match ? match.url : "";
-  var path = match ? match.path : "";
-
-  console.log("url", url);
-  console.log("path", path);
-
-  var link = `${url}/${Routes.VoucherRequestGForm}`;
-  console.log("link", link);
-
   return (
     <div className={classes.container}>
       <FixItBus />
