@@ -17,10 +17,15 @@ const Initializer: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  let basename = "/msnap-registration";
+  if (typeof window !== "undefined" && window.location.host.startsWith("localhost")) {
+    basename = "/";
+  }
+
   return (
     <StateProvider>
       <Initializer />
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Switch>
           <Route path={Routes.VoucherRequestGForm}>
             <VoucherRequestGForm />
