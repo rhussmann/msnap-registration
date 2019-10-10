@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: "20px",
       display: "flex",
       flexDirection: "row",
+      justifyContent: "center",
     },
     busHood: {
       display: "block",
