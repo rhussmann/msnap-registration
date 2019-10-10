@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, HashRouter } from "react-router-dom";
 import { Routes } from "./Routes";
 import { Home } from "./routes/Home";
 import { VoucherRequestGForm } from "./routes/VoucherRequestGForm";
@@ -27,7 +27,7 @@ const App: React.FC = () => {
   return (
     <StateProvider>
       <Initializer />
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path={Routes.VoucherRequestGForm}>
             <VoucherRequestGForm />
@@ -36,7 +36,7 @@ const App: React.FC = () => {
             <Home />
           </Route>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </StateProvider>
   );
 };
