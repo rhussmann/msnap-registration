@@ -17,20 +17,22 @@ const Initializer: React.FC = () => {
 };
 
 const App: React.FC = () => {
-  let basename = "/msnap-registration";
+  // let basename = "/msnap-registration";
   // if (typeof window !== "undefined" && window.location.host.startsWith("localhost")) {
   //   basename = "/";
   // }
 
+  console.log("process.env.PUBLIC_URL", process.env.PUBLIC_URL);
+
   return (
     <StateProvider>
       <Initializer />
-      <BrowserRouter basename={basename}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route path={`${process.env.PUBLIC_URL}${Routes.VoucherRequestGForm}`}>
+          <Route path={Routes.VoucherRequestGForm}>
             <VoucherRequestGForm />
           </Route>
-          <Route path={`${process.env.PUBLIC_URL}${Routes.Home}`}>
+          <Route path={Routes.Home}>
             <Home />
           </Route>
         </Switch>

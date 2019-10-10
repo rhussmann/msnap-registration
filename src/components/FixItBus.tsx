@@ -3,7 +3,6 @@ import { makeStyles, createStyles } from "@material-ui/styles";
 import { Theme } from "@material-ui/core";
 import { useStateValue } from "../state/state";
 import { Spinner } from "./Spinner";
-import { url } from "inspector";
 
 const seatsPerRow = 6;
 const isleWidth = 5;
