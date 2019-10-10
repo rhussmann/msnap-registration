@@ -1,11 +1,14 @@
 import React from "react";
 import { makeStyles, createStyles } from "@material-ui/styles";
-import { Theme } from "@material-ui/core";
+import { Theme, Tooltip } from "@material-ui/core";
 import { useStateValue } from "../state/state";
 import { Spinner } from "./Spinner";
+import { Routes } from "../Routes";
+import { Link } from "react-router-dom";
 
 const seatsPerRow = 6;
 const isleWidth = 5;
+const borderWidth = 2;
 const seatCommon = {
   margin: 2,
   width: 30,
@@ -23,7 +26,17 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     openSeat: {
       ...seatCommon,
-      backgroundColor: "blue",
+      width: seatCommon.width - borderWidth * 2,
+      height: seatCommon.height - borderWidth * 2,
+      backgroundColor: "#d8dde3",
+      borderColor: "#3a4456",
+      borderWidth,
+      borderRadius: 5,
+      borderStyle: "solid",
+      "&:hover": {
+        opacity: 0.5,
+        filter: "alpha(opacity=50)",
+      },
     },
     aisleSpacer: {
       width: isleWidth,
@@ -70,7 +83,17 @@ interface Props {
 }
 const BusSeat: React.FC<Props> = ({ occupied }) => {
   const classes = useStyles();
-  return <div className={occupied ? classes.occupiedSeat : classes.openSeat} />;
+  if (occupied) {
+    return <div className={classes.occupiedSeat} />;
+  }
+
+  return (
+    <Tooltip title="Get on the bus">
+      <Link to={Routes.VoucherRequestGForm}>
+        <div className={classes.openSeat} />
+      </Link>
+    </Tooltip>
+  );
 };
 
 const CenterAisleSpacer: React.FC = () => {
