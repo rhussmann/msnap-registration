@@ -17,17 +17,10 @@ const Initializer: React.FC = () => {
 };
 
 const App: React.FC = () => {
-  // let basename = "/msnap-registration";
-  // if (typeof window !== "undefined" && window.location.host.startsWith("localhost")) {
-  //   basename = "/";
-  // }
-
-  console.log("process.env.PUBLIC_URL", process.env.PUBLIC_URL);
-
   return (
     <StateProvider>
       <Initializer />
-      <HashRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         <Switch>
           <Route path={Routes.VoucherRequestGForm}>
             <VoucherRequestGForm />
