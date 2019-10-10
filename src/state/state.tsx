@@ -8,8 +8,8 @@ export interface AppState {
 }
 
 export interface BusInfo {
-  capacity: 40;
-  seatsTaken: 0;
+  capacity: number;
+  seatsTaken: number;
 }
 
 const defaultState: AppState = {
