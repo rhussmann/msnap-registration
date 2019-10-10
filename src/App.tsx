@@ -18,19 +18,19 @@ const Initializer: React.FC = () => {
 
 const App: React.FC = () => {
   let basename = "/msnap-registration";
-  if (typeof window !== "undefined" && window.location.host.startsWith("localhost")) {
-    basename = "/";
-  }
+  // if (typeof window !== "undefined" && window.location.host.startsWith("localhost")) {
+  //   basename = "/";
+  // }
 
   return (
     <StateProvider>
       <Initializer />
       <BrowserRouter basename={basename}>
         <Switch>
-          <Route path={Routes.VoucherRequestGForm}>
+          <Route path={`${process.env.PUBLIC_URL}${Routes.VoucherRequestGForm}`}>
             <VoucherRequestGForm />
           </Route>
-          <Route path={Routes.Home}>
+          <Route path={`${process.env.PUBLIC_URL}${Routes.Home}`}>
             <Home />
           </Route>
         </Switch>

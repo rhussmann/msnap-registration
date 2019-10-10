@@ -27,7 +27,7 @@ export const Home: React.FC = () => {
     <div className={classes.container}>
       <FixItBus />
       <StateSummary />
-      <Link to={Routes.VoucherRequestGForm}>
+      <Link to={`${process.env.PUBLIC_URL}${Routes.VoucherRequestGForm}`}>
         <Fab variant="extended" className={classes.fab}>
           Request a seat
         </Fab>
