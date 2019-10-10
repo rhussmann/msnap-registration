@@ -2,7 +2,6 @@
   "name": "msnap-hif",
   "version": "0.1.0",
   "license": "MIT",
-  "homepage": "/msnap-registration",
   "dependencies": {
     "@material-ui/core": "^4.5.0",
     "@types/jest": "24.0.18",
