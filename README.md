@@ -5,6 +5,8 @@ Hack-it-Forward charity hackathon. The goal of this project is to
 increase the efficiency of the M-SNAP volunteers as they process
 requests for their spay and neuter vouchers
 
+https://rhussmann.github.io/msnap-registration/
+
 ## Project Dependencies
 
 - `homebrew` (for installing dependencies): [install](https://brew.sh)
