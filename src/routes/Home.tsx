@@ -23,11 +23,6 @@ const useStyles = makeStyles(theme =>
 export const Home: React.FC = () => {
   const classes = useStyles();
 
-  // let path = "/msnap-registration" + Routes.VoucherRequestGForm;
-  // if (typeof window !== "undefined" && window.location.host.startsWith("localhost")) {
-  //   path = Routes.VoucherRequestGForm;
-  // }
-
   return (
     <div className={classes.container}>
       <FixItBus />
