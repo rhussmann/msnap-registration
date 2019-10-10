@@ -20,7 +20,7 @@ const App: React.FC = () => {
   return (
     <StateProvider>
       <Initializer />
-      <BrowserRouter basename="/msnap-registration">
+      <BrowserRouter>
         <Switch>
           <Route path={Routes.VoucherRequestGForm}>
             <VoucherRequestGForm />

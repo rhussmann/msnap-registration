@@ -23,6 +23,9 @@ const useStyles = makeStyles(theme =>
 export const Home: React.FC = () => {
   const classes = useStyles();
 
+  const routeMatch = useRouteMatch();
+  console.log("routeMatch", routeMatch);
+
   return (
     <div className={classes.container}>
       <FixItBus />
