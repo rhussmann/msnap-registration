@@ -23,11 +23,16 @@ const useStyles = makeStyles(theme =>
 export const Home: React.FC = () => {
   const classes = useStyles();
 
+  // let path = "/msnap-registration" + Routes.VoucherRequestGForm;
+  // if (typeof window !== "undefined" && window.location.host.startsWith("localhost")) {
+  //   path = Routes.VoucherRequestGForm;
+  // }
+
   return (
     <div className={classes.container}>
       <FixItBus />
       <StateSummary />
-      <Link to={`${process.env.PUBLIC_URL}${Routes.VoucherRequestGForm}`}>
+      <Link to={Routes.VoucherRequestGForm}>
         <Fab variant="extended" className={classes.fab}>
           Request a seat
         </Fab>

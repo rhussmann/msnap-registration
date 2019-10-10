@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     progress: {
       margin: theme.spacing(2),
+      color: "#333e50",
     },
   })
 );

@@ -1,16 +1,20 @@
 import React from "react";
 import { makeStyles, createStyles } from "@material-ui/styles";
-import { Theme } from "@material-ui/core";
+import { Theme, Tooltip } from "@material-ui/core";
 import { useStateValue } from "../state/state";
 import { Spinner } from "./Spinner";
+import { Routes } from "../Routes";
+import { Link } from "react-router-dom";
 
 const seatsPerRow = 6;
 const isleWidth = 5;
+const borderWidth = 2;
 const seatCommon = {
   margin: 2,
   width: 30,
   height: 30,
 };
+const seatContainerWidth = (seatCommon.width + seatCommon.margin * 2) * seatsPerRow + isleWidth;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,7 +27,17 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     openSeat: {
       ...seatCommon,
-      backgroundColor: "blue",
+      width: seatCommon.width - borderWidth * 2,
+      height: seatCommon.height - borderWidth * 2,
+      backgroundColor: "#d8dde3",
+      borderColor: "#3a4456",
+      borderWidth,
+      borderRadius: 5,
+      borderStyle: "solid",
+      "&:hover": {
+        opacity: 0.5,
+        filter: "alpha(opacity=50)",
+      },
     },
     aisleSpacer: {
       width: isleWidth,
@@ -31,7 +45,7 @@ const useStyles = makeStyles((theme: Theme) =>
     seatContainer: {
       display: "flex",
       flexWrap: "wrap",
-      width: (seatCommon.width + seatCommon.margin * 2) * seatsPerRow + isleWidth,
+      width: seatContainerWidth,
     },
     busWrap: {
       width: "275px",
@@ -62,6 +76,11 @@ const useStyles = makeStyles((theme: Theme) =>
     flip: {
       transform: "scaleX(-1)",
     },
+    spinnerContainer: {
+      display: "flex",
+      justifyContent: "center",
+      width: seatContainerWidth,
+    },
   })
 );
 
@@ -70,7 +89,17 @@ interface Props {
 }
 const BusSeat: React.FC<Props> = ({ occupied }) => {
   const classes = useStyles();
-  return <div className={occupied ? classes.occupiedSeat : classes.openSeat} />;
+  if (occupied) {
+    return <div className={classes.occupiedSeat} />;
+  }
+
+  return (
+    <Tooltip title="Get on the bus">
+      <Link to={Routes.VoucherRequestGForm}>
+        <div className={classes.openSeat} />
+      </Link>
+    </Tooltip>
+  );
 };
 
 const CenterAisleSpacer: React.FC = () => {
@@ -83,7 +112,11 @@ const BusSeats: React.FC = () => {
   const { initialized, bus } = useStateValue()[0];
 
   if (!initialized) {
-    return <Spinner />;
+    return (
+      <div className={classes.spinnerContainer}>
+        <Spinner />
+      </div>
+    );
   }
 
   const seats = [];
