@@ -1,6 +1,6 @@
 import React from "react";
 import Fab from "@material-ui/core/Fab";
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 import { Routes } from "../Routes";
 import { FixItBus } from "../components/FixItBus";
 import { createStyles, makeStyles } from "@material-ui/core";
@@ -22,6 +22,17 @@ const useStyles = makeStyles(theme =>
 
 export const Home: React.FC = () => {
   const classes = useStyles();
+
+  var match = useRouteMatch();
+  var url = match ? match.url : "";
+  var path = match ? match.path : "";
+
+  console.log("url", url);
+  console.log("path", path);
+
+  var link = `${url}/${Routes.VoucherRequestGForm}`;
+  console.log("link", link);
+
   return (
     <div className={classes.container}>
       <FixItBus />
