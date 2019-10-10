@@ -14,6 +14,7 @@ const seatCommon = {
   width: 30,
   height: 30,
 };
+const seatContainerWidth = (seatCommon.width + seatCommon.margin * 2) * seatsPerRow + isleWidth;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -44,7 +45,7 @@ const useStyles = makeStyles((theme: Theme) =>
     seatContainer: {
       display: "flex",
       flexWrap: "wrap",
-      width: (seatCommon.width + seatCommon.margin * 2) * seatsPerRow + isleWidth,
+      width: seatContainerWidth,
     },
     busWrap: {
       width: "275px",
@@ -74,6 +75,11 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     flip: {
       transform: "scaleX(-1)",
+    },
+    spinnerContainer: {
+      display: "flex",
+      justifyContent: "center",
+      width: seatContainerWidth,
     },
   })
 );
@@ -106,7 +112,11 @@ const BusSeats: React.FC = () => {
   const { initialized, bus } = useStateValue()[0];
 
   if (!initialized) {
-    return <Spinner />;
+    return (
+      <div className={classes.spinnerContainer}>
+        <Spinner />
+      </div>
+    );
   }
 
   const seats = [];
