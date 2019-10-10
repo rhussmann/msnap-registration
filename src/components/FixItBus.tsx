@@ -4,7 +4,8 @@ import { Theme } from "@material-ui/core";
 import { useStateValue } from "../state/state";
 import { Spinner } from "./Spinner";
 
-const seatsPerRow = 4;
+const seatsPerRow = 6;
+const isleWidth = 5;
 const seatCommon = {
   margin: 2,
   width: 20,
@@ -21,10 +22,13 @@ const useStyles = makeStyles((theme: Theme) =>
       ...seatCommon,
       backgroundColor: "blue",
     },
+    aisleSpacer: {
+      width: isleWidth,
+    },
     seatContainer: {
       display: "flex",
       flexWrap: "wrap",
-      width: (seatCommon.width + seatCommon.margin * 2) * seatsPerRow,
+      width: (seatCommon.width + seatCommon.margin * 2) * seatsPerRow + isleWidth,
     },
     busWrap: {
       width: "275px",
@@ -66,6 +70,11 @@ const BusSeat: React.FC<Props> = ({ occupied }) => {
   return <div className={occupied ? classes.occupiedSeat : classes.openSeat} />;
 };
 
+const CenterAisleSpacer: React.FC = () => {
+  const classes = useStyles();
+  return <div className={classes.aisleSpacer} />;
+};
+
 const BusSeats: React.FC = () => {
   const classes = useStyles();
   const { initialized, bus } = useStateValue()[0];
@@ -77,6 +86,9 @@ const BusSeats: React.FC = () => {
   const seats = [];
   for (let i = 0; i < bus.capacity; i++) {
     seats.push(<BusSeat key={`seat${i}`} occupied={i < bus.seatsTaken} />);
+    if (i % seatsPerRow === Math.floor(seatsPerRow / 2) - 1) {
+      seats.push(<CenterAisleSpacer key={`aisle${i}`} />);
+    }
   }
   return <div className={classes.seatContainer}>{seats}</div>;
 };
