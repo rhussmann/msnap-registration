@@ -1,17 +1,9 @@
 import React from "react";
-import { Typography, makeStyles } from "@material-ui/core";
-
-const useStyles = makeStyles({
-  header: {
-    marginBottom: "15px",
-  },
-});
+import { Typography } from "@material-ui/core";
 
 export const Header = () => {
-  const classes = useStyles();
-
   return (
-    <div className={classes.header}>
+    <div>
       <Typography variant="h2">Fix it Bus</Typography>
     </div>
   );

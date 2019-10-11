@@ -24,6 +24,8 @@ const useStyles = makeStyles(theme =>
     },
     right: {
       width: "700px",
+      marginTop: "45px",
+      margin: "20px",
     },
     fab: {
       margin: theme.spacing(1),
