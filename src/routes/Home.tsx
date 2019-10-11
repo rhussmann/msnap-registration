@@ -1,4 +1,4 @@
-import { createStyles, Fab, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Button, createStyles, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router-dom";
 import { FixItBus } from "../components/FixItBus";
@@ -27,15 +27,18 @@ const useStyles = makeStyles(theme =>
       marginTop: "45px",
       margin: "20px",
     },
-    fab: {
+    button: {
       margin: theme.spacing(1),
-      width: 150,
+      width: 200,
     },
     pageContainer: {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
+    },
+    link: {
+      textDecoration: "none",
     },
   })
 );
@@ -50,10 +53,10 @@ export const Home: React.FC = () => {
         <Grid item className={classes.left}>
           <FixItBus />
           <StateSummary />
-          <Link to={Routes.VoucherRequestGForm}>
-            <Fab variant="extended" className={classes.fab}>
+          <Link to={Routes.VoucherRequestGForm} className={classes.link}>
+            <Button variant="contained" size="large" color="primary" className={classes.button}>
               Request a seat
-            </Fab>
+            </Button>
           </Link>
         </Grid>
         <Grid item className={classes.right}>
