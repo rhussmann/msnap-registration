@@ -5,6 +5,7 @@ import { FixItBus } from "../components/FixItBus";
 import { Header } from "../components/Header";
 import { StateSummary } from "../components/StateSummary";
 import { Routes } from "../Routes";
+import { useStateValue } from "../state/state";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -45,6 +46,14 @@ const useStyles = makeStyles(theme =>
 
 export const Home: React.FC = () => {
   const classes = useStyles();
+  const { initialized, bus } = useStateValue()[0];
+
+  const buttonEnabled = bus.seatsTaken < bus.capacity && initialized;
+  const button = (
+    <Button disabled={!buttonEnabled} variant="contained" size="large" color="primary" className={classes.button}>
+      Request a seat
+    </Button>
+  );
 
   return (
     <div className={classes.pageContainer}>
@@ -53,11 +62,7 @@ export const Home: React.FC = () => {
         <Grid item className={classes.left}>
           <FixItBus />
           <StateSummary />
-          <Link to={Routes.VoucherRequestGForm} className={classes.link}>
-            <Button variant="contained" size="large" color="primary" className={classes.button}>
-              Request a seat
-            </Button>
-          </Link>
+          {buttonEnabled ? <Link to={Routes.VoucherRequestGForm} className={classes.link} children={button} /> : button}
         </Grid>
         <Grid item className={classes.right}>
           <Typography variant="h5">Qualifying for Assistance</Typography>
