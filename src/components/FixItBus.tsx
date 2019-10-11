@@ -5,6 +5,7 @@ import { useStateValue } from "../state/state";
 import { Spinner } from "./Spinner";
 import { Routes } from "../Routes";
 import { Link } from "react-router-dom";
+import { BusDash } from "../components/BusDash";
 
 const seatsPerRow = 6;
 const isleWidth = 5;
@@ -55,10 +56,6 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
     },
     busHood: {
-      display: "block",
-      width: "100%",
-    },
-    busDash: {
       display: "block",
       width: "100%",
     },
@@ -141,7 +138,7 @@ export const FixItBus: React.FC = () => {
       <div>
         <img alt="bus hood" src="assets/bus.front.svg" className={classes.busHood} />
         <div className={classes.busBody}>
-          <img alt="bus dash" src="assets/bus.dash.svg" className={classes.busDash} />
+          <BusDash />
           <BusSeats />
         </div>
       </div>
