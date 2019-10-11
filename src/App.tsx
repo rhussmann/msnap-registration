@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Switch, Route, HashRouter } from "react-router-dom";
+import { Switch, Route, HashRouter } from "react-router-dom";
 import { Routes } from "./Routes";
 import { Home } from "./routes/Home";
 import { VoucherRequestGForm } from "./routes/VoucherRequestGForm";

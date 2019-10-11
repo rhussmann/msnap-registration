@@ -69,6 +69,7 @@ const useStyles = makeStyles((theme: Theme) =>
       borderLeft: "4px solid #fdb303",
       borderRight: "4px solid #fdb303",
       borderBottom: "4px solid #fdb303",
+      backgroundColor: "#eaeaea",
     },
     mirror: {
       marginTop: "90px",

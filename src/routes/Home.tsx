@@ -5,6 +5,7 @@ import { Routes } from "../Routes";
 import { FixItBus } from "../components/FixItBus";
 import { createStyles, makeStyles } from "@material-ui/core";
 import { StateSummary } from "../components/StateSummary";
+import { Header } from "../components/Header";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -25,6 +26,7 @@ export const Home: React.FC = () => {
 
   return (
     <div className={classes.container}>
+      <Header />
       <FixItBus />
       <StateSummary />
       <Link to={Routes.VoucherRequestGForm}>
