@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/msnap-registration/static/css/main.f05d5f4b.chunk.css",
+    "main.js": "/msnap-registration/static/js/main.13da9fe8.chunk.js",
+    "main.js.map": "/msnap-registration/static/js/main.13da9fe8.chunk.js.map",
+    "runtime-main.js": "/msnap-registration/static/js/runtime-main.48d751f7.js",
+    "runtime-main.js.map": "/msnap-registration/static/js/runtime-main.48d751f7.js.map",
+    "static/js/2.1f44b3b1.chunk.js": "/msnap-registration/static/js/2.1f44b3b1.chunk.js",
+    "static/js/2.1f44b3b1.chunk.js.map": "/msnap-registration/static/js/2.1f44b3b1.chunk.js.map",
+    "index.html": "/msnap-registration/index.html",
+    "precache-manifest.ca0fed630591a0fb4d411f14fd60acd8.js": "/msnap-registration/precache-manifest.ca0fed630591a0fb4d411f14fd60acd8.js",
+    "service-worker.js": "/msnap-registration/service-worker.js",
+    "static/css/main.f05d5f4b.chunk.css.map": "/msnap-registration/static/css/main.f05d5f4b.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.48d751f7.js",
+    "static/js/2.1f44b3b1.chunk.js",
+    "static/css/main.f05d5f4b.chunk.css",
+    "static/js/main.13da9fe8.chunk.js"
+  ]
+}
